@@ -18,6 +18,7 @@ function ShortUrlList({ urls }) {
             <TableCell>Full URL</TableCell>
             <TableCell>Short URL</TableCell>
             <TableCell align="right">Clicks</TableCell>
+            <TableCell align="right" />
           </TableRow>
         </TableHead>
         <TableBody>

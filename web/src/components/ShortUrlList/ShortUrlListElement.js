@@ -1,4 +1,5 @@
-import { TableCell, TableRow } from "@mui/material";
+import { TableCell, TableRow, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function ShortUrlListElement({ full, short, clicks }) {
   return (
@@ -8,6 +9,11 @@ function ShortUrlListElement({ full, short, clicks }) {
       </TableCell>
       <TableCell>{short}</TableCell>
       <TableCell align="right">{clicks}</TableCell>
+      <TableCell align="right">
+        <IconButton variant="contained">
+          <DeleteIcon />
+        </IconButton>
+      </TableCell>
     </TableRow>
   );
 }
