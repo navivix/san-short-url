@@ -33,6 +33,8 @@ app.get("/:shortUrl", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+  if (!req.body.url) return res.status(400).send();
+
   const shortUrl = await ShortUrl.create({ full: req.body.url });
 
   res.send(shortUrl);
