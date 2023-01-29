@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import ShortUrlListElement from "./ShortUrlListElement";
 
-function ShortUrlList({ urls }) {
+function ShortUrlList({ urls, onDelete }) {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -28,6 +28,7 @@ function ShortUrlList({ urls }) {
               full={url.full}
               short={url.short}
               clicks={url.clicks}
+              onDelete={onDelete}
             />
           ))}
         </TableBody>
