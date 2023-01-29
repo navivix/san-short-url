@@ -1,6 +1,7 @@
 import * as dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 import ShortUrl from "./models/shortUrl.js";
 
 dotenv.config();
@@ -12,6 +13,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
