@@ -2,11 +2,14 @@ import { useState } from "react";
 import { OutlinedInput, Button, Box } from "@mui/material";
 
 function ShrinkBar({ onSubmit }) {
-  const [url, setUrl] = useState();
+  const [url, setUrl] = useState("");
 
   const handleChange = (e) => setUrl(e.target.value);
 
-  const handleSubmit = () => onSubmit(url);
+  const handleSubmit = () => {
+    setUrl("");
+    onSubmit(url);
+  };
 
   return (
     <Box sx={{ display: "flex", mb: 2 }}>
