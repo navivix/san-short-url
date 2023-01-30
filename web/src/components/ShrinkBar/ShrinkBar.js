@@ -9,8 +9,10 @@ function ShrinkBar({ onSubmit }) {
   const handleChange = (e) => setUrl(e.target.value);
 
   const handleSubmit = () => {
-    setUrl("");
-    onSubmit(url);
+    if (validateUrl(url)) {
+      setUrl("");
+      onSubmit(url);
+    }
   };
 
   useEffect(() => {
